@@ -70,7 +70,7 @@ const Home = () => {
             <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5'>
 
               <Card
-                Card='bg-gradient-to-t from-[#DF5984] to-[#A63591] w-full py-4 lg:rounded-lg text-center'
+                Card='h-103 bg-gradient-to-t from-[#DF5984] to-[#A63591] w-full py-4 lg:rounded-lg text-center'
                 image='./WhiteLogo.png'
                 imageClassname='h-10 mx-auto mb-2'
                 title='Glow'
@@ -85,7 +85,7 @@ const Home = () => {
               />
 
               <Card
-                Card='bg-gradient-to-t from-[#F6CA45] to-[#E09362] w-full py-4 lg:rounded-lg text-center'
+                Card='h-103 bg-gradient-to-t from-[#F6CA45] to-[#E09362] w-full py-4 lg:rounded-lg text-center'
                 image='./WhiteLogo.png'
                 imageClassname='h-10 mx-auto mb-2'
                 title='Charge'
@@ -100,7 +100,7 @@ const Home = () => {
               />
 
               <Card
-                Card='bg-gradient-to-t from-[#56B5CD] to-[#2D6AAE] w-full py-4 lg:rounded-lg text-center'
+                Card='h-103 bg-gradient-to-t from-[#56B5CD] to-[#2D6AAE] w-full py-4 lg:rounded-lg text-center'
                 image='./WhiteLogo.png'
                 imageClassname='h-10 mx-auto mb-2'
                 title='Original'
@@ -115,7 +115,7 @@ const Home = () => {
               />
 
               <Card
-                Card='bg-gradient-to-t from-[#B1CD81] to-[#C5494A] w-full py-2 lg:rounded-lg text-center'
+                Card='h-103 bg-gradient-to-t from-[#B1CD81] to-[#C5494A] w-full py-2 lg:rounded-lg text-center'
                 image='./WhiteLogo.png'
                 imageClassname='h-10 mx-auto mb-2'
                 title='Kids'
@@ -123,7 +123,7 @@ const Home = () => {
                 description={'Essential electrolyte drink mix' + '\n' + 'for kids'}
                 descriptionClassname='text-white text-sm leading-none mb-2'
                 image2='./Product4.png'
-                image2Classname='mb-3 lg:w-38 w-50 mx-auto'
+                image2Classname='mb-4 lg:w-38 w-50 mx-auto'
                 link='Learn More'
                 LinkNavigate='/'
                 LinkClassname='bg-white text-[#B4BF7B] text-lg font-semibold py-2 px-3 rounded-full'

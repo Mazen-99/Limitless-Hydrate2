@@ -1,9 +1,35 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Card from '../components/Card'
 
 const Community = () => {
+
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:1337/api/products?populate=*')
+      .then(res => res.json())
+      .then(data => {
+        setProducts(data.data)
+      })
+  }, [])
+
+  const product1: any = products[2]
+  const product2: any = products[3]
+  const product3: any = products[4]
+  const product4: any = products[5]
+  const product5: any = products[6]
+  const product6: any = products[7]
+  const product7: any = products[8]
+  const product8: any = products[9]
+  const product9: any = products[10]
+  const product10: any = products[11]
+  const product11: any = products[12]
+  const product12: any = products[13]
+
+
   return (
     <div>
       <Navbar />
@@ -57,60 +83,76 @@ const Community = () => {
 
         </div>
 
-        <div className='w-full lg:w-[900px] mx-auto mb-25'>
+        <div className='w-full lg:w-[915px] mx-auto mb-25'>
           <div className='py-10'>
             <h1 className='text-3xl font-bold text-center text-[#0D1B2A] pb-5 '>Your Weekly Hydration Guide</h1>
             <p className='text-md text-center text-[#0D1B2A]'>Tailored hydration tips for your lifestyle.</p>
           </div>
+
           <div className='grid grid-cols-2 lg:grid-cols-4 sm:gap-y-0 lg:gap-0'>
-            <Card
-              Card='w-[225px] h-max bg-white pb-5 mr-4 rounded-lg'
-              image='./HeroReadPage.jpg'
-              imageClassname='w-full h-50 object-cover object-[center_10%] rounded-tl-lg rounded-tr-lg'
-              title={'Start Your Day' + '\n' + 'Right'}
-              titleClassname='text-xl font-bold text-left pt-5 pl-5'
-              description={'Kickstart your metabolism and' + '\n' + 'energy levels with the first sip of' + '\n' + 'the day.'}
-              descriptionClassname='text-sm text-left pt-2 pl-5 mb-4'
-              link='Read Tip'
-              LinkNavigate='/ReadPage'
-              LinkClassname='mr-25 bg-black text-lg text-white px-3 py-2 rounded-full font-semibold'
-            />
-            <Card
-              Card='w-[225px] h-max bg-white pb-5 mr-4 rounded-lg'
-              image='./Image1.jpg'
-              imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
-              title={'Why You Still Need' + '\n' + 'Electrolytes'}
-              titleClassname='text-xl font-bold text-left pt-5 pl-5'
-              description={'Cold weather can dehydrate you' + '\n' + '—stay ahead with smart' + '\n' + 'hydration.'}
-              descriptionClassname='text-sm text-left pt-2 pl-5 mb-4'
-              link='Read Tip'
-              LinkNavigate='/Community'
-              LinkClassname='mr-25 bg-black text-lg text-white px-3 py-2 rounded-full font-semibold'
-            />
-            <Card
-              Card='w-[225px] h-max bg-white pb-5 mr-4 rounded-lg'
-              image='./Image2.jpg'
-              imageClassname='w-full h-50 object-cover object-[center_10%] rounded-tl-lg rounded-tr-lg'
-              title={'Stay Energized as' + '\n' + 'Temperatures Drop'}
-              titleClassname='text-xl font-bold text-left pt-5 pl-5'
-              description={'Hydration plays a key role in' + '\n' + 'seasonal immunity and energy' + '\n' + 'levels.'}
-              descriptionClassname='text-sm text-left pt-2 pl-5 pb-9'
-              link='Read Tip'
-              LinkNavigate='/Community'
-              LinkClassname='mr-25 bg-black text-lg text-white px-3 py-2 rounded-full font-semibold'
-            />
-            <Card
-              Card='w-[225px] h-max bg-white pb-5 mr-4 rounded-lg'
-              image='./Image3.jpg'
-              imageClassname='w-full h-50 object-cover object-[center_110%] rounded-tl-lg rounded-tr-lg'
-              title={'How It Affects' + '\n' + 'Your Performance'}
-              titleClassname='text-xl font-bold text-left pt-5 pl-5'
-              description={'The key to endurance, muscle' + '\n' + 'recovery, and peak performance.' + '\n' + ''}
-              descriptionClassname='text-sm text-left pt-2 pl-5 pb-9'
-              link='Read Tip'
-              LinkNavigate='/Community'
-              LinkClassname='mr-25 bg-black text-lg text-white px-3 py-2 rounded-full font-semibold'
-            />
+            {product1 && (
+              <Card
+                key={product1.id}
+                Card='w-[225px] h-107 bg-white pb-5 mr-4 rounded-lg'
+                image={`http://localhost:1337${product1.image?.url}`}
+                imageClassname='w-full h-50 object-cover object-[center_10%] rounded-tl-lg rounded-tr-lg'
+                title={product1.title}
+                titleClassname='text-xl font-bold text-left pt-5 pl-5'
+                description={product1.description}
+                descriptionClassname='text-sm text-left pt-2 pl-5 mb-4'
+                link='Read Tip'
+                LinkNavigate='/ReadPage'
+                LinkClassname='mr-25 bg-black text-lg text-white px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
+
+            {product2 && (
+              <Card
+                key={product2.id}
+                Card='w-[225px] h-107 bg-white pb-5 mr-4 rounded-lg'
+                image={`http://localhost:1337${product2.image?.url}`}
+                imageClassname='w-full h-50 object-cover object-[center_10%] rounded-tl-lg rounded-tr-lg'
+                title={product2.title}
+                titleClassname='text-xl font-bold text-left pt-5 pl-5'
+                description={product2.description}
+                descriptionClassname='text-sm text-left pt-2 pl-5 mb-4'
+                link='Read Tip'
+                LinkNavigate='/ReadPage'
+                LinkClassname='mr-25 bg-black text-lg text-white px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
+
+            {product3 && (
+              <Card
+                key={product3.id}
+                Card='w-[225px] h-107 bg-white pb-5 mr-4 rounded-lg'
+                image={`http://localhost:1337${product3.image?.url}`}
+                imageClassname='w-full h-50 object-cover object-[center_10%] rounded-tl-lg rounded-tr-lg'
+                title={product3.title}
+                titleClassname='text-xl font-bold text-left pt-5 pl-5'
+                description={product3.description}
+                descriptionClassname='text-sm text-left pt-2 pl-5 mb-9'
+                link='Read Tip'
+                LinkNavigate='/ReadPage'
+                LinkClassname='mr-25 bg-black text-lg text-white px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
+
+            {product4 && (
+              <Card
+                key={product4.id}
+                Card='w-[225px] h-107 bg-white pb-5 mr-4 rounded-lg'
+                image={`http://localhost:1337${product4.image?.url}`}
+                imageClassname='w-full h-50 object-cover object-[center_100%] rounded-tl-lg rounded-tr-lg'
+                title={product4.title}
+                titleClassname='text-xl font-bold text-left pt-5 pl-5'
+                description={product4.description}
+                descriptionClassname='text-sm text-left pt-2 pl-5 mb-9'
+                link='Read Tip'
+                LinkNavigate='/ReadPage'
+                LinkClassname='mr-25 bg-black text-lg text-white px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
           </div>
         </div>
 
@@ -160,95 +202,119 @@ const Community = () => {
             <p className='text-[#0D1B2A] text-md text-center'>Expert-backed knowledge to help you stay <br /> optimally hydrated</p>
           </div>
           <div className='grid grid-cols-2 lg:grid-cols-4 gap-5 mb-5'>
-            <Card
-              Card='w-[225px] h-90 bg-white rounded-lg '
-              image='./Image7.jpg'
-              imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
-              title={'5 Reasons Why' + '\n' + 'Electrolytes Matter' + '\n' + 'More Than You Think'}
-              titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-3'
-              link='Read article'
-              LinkNavigate='/ReadPage'
-              LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold'
-            />
+            {product5 && (
+              <Card
+                key={product5.id}
+                Card='w-[225px] h-90 bg-white rounded-lg '
+                image={`http://localhost:1337${product5.image?.url}`}
+                imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
+                title={product5.title}
+                titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-3'
+                link='Read article'
+                LinkNavigate='/ReadPage'
+                LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
 
-            <Card
-              Card='w-[225px] h-90 bg-white rounded-lg '
-              image='./Image6.jpg'
-              imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
-              title={'The science behind' + '\n' + 'hydration'}
-              titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
-              link='Read article'
-              LinkNavigate='/Communtiy'
-              LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold'
-            />
+            {product6 && (
+              <Card
+                key={product6.id}
+                Card='w-[225px] h-90 bg-white rounded-lg '
+                image={`http://localhost:1337${product6.image?.url}`}
+                imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
+                title={product6.title}
+                titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
+                link='Read article'
+                LinkNavigate='/ReadPage'
+                LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
 
-            <Card
-              Card='w-[225px] h-90 bg-white rounded-lg '
-              image='./Image8.jpg'
-              imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
-              title={'Debunking common' + '\n' + 'hydration myths'}
-              titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
-              link='Read article'
-              LinkNavigate='/Communtiy'
-              LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold'
-            />
+            {product7 && (
+              <Card
+                key={product7.id}
+                Card='w-[225px] h-90 bg-white rounded-lg '
+                image={`http://localhost:1337${product7.image?.url}`}
+                imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
+                title={product7.title}
+                titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
+                link='Read article'
+                LinkNavigate='/ReadPage'
+                LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
 
-            <Card
-              Card='w-[225px] h-90 bg-white rounded-lg '
-              image='./Image9.jpg'
-              imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
-              title={'Hydration’s role' + '\n' + 'in performance'}
-              titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
-              link='Read article'
-              LinkNavigate='/Communtiy'
-              LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold'
-            />
+            {product8 && (
+              <Card
+                key={product8.id}
+                Card='w-[225px] h-90 bg-white rounded-lg '
+                image={`http://localhost:1337${product8.image?.url}`}
+                imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
+                title={product8.title}
+                titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
+                link='Read article'
+                LinkNavigate='/ReadPage'
+                LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
           </div>
 
           <div className='grid grid-cols-2 lg:grid-cols-4 gap-5'>
-            <Card
-              Card='w-[225px] h-90 bg-white rounded-lg'
-              image='./image11.jpg'
-              imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
-              title={'Why electrolytes' + '\n' + 'matter'}
-              titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
-              link='Read article'
-              LinkNavigate='/Community'
-              LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold'
-            />
+            {product9 && (
+              <Card
+                key={product9.id}
+                Card='w-[225px] h-90 bg-white rounded-lg '
+                image={`http://localhost:1337${product9.image?.url}`}
+                imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
+                title={product9.title}
+                titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
+                link='Read article'
+                LinkNavigate='/ReadPage'
+                LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
 
-            <Card
-              Card='w-[225px] h-90 bg-white rounded-lg'
-              image='./image10.jpg'
-              imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
-              title={'Hydration and' + '\n' + 'immune health'}
-              titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
-              link='Read article'
-              LinkNavigate='/Community'
-              LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold'
-            />
+            {product10 && (
+              <Card
+                key={product5.id}
+                Card='w-[225px] h-90 bg-white rounded-lg '
+                image={`http://localhost:1337${product10.image?.url}`}
+                imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
+                title={product10.title}
+                titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
+                link='Read article'
+                LinkNavigate='/ReadPage'
+                LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
 
-            <Card
-              Card='w-[225px] h-90 bg-white rounded-lg'
-              image='./image12.png'
-              imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
-              title={'Hydration and' + '\n' + 'immune health'}
-              titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
-              link='Read article'
-              LinkNavigate='/Community'
-              LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold'
-            />
+            {product11 && (
+              <Card
+                key={product11.id}
+                Card='w-[225px] h-90 bg-white rounded-lg '
+                image={`http://localhost:1337${product11.image?.url}`}
+                imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
+                title={product11.title}
+                titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
+                link='Read article'
+                LinkNavigate='/ReadPage'
+                LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
 
-            <Card
-              Card='w-[225px] h-90 bg-white rounded-lg'
-              image='./HeroReadPage.jpg'
-              imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
-              title={'How much water' + '\n' + 'you really need'}
-              titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
-              link='Read article'
-              LinkNavigate='/ReadPage'
-              LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold'
-            />
+            {product12 && (
+              <Card
+                key={product12.id}
+                Card='w-[225px] h-90 bg-white rounded-lg '
+                image={`http://localhost:1337${product12.image?.url}`}
+                imageClassname='w-full h-50 object-cover rounded-tl-lg rounded-tr-lg'
+                title={product12.title}
+                titleClassname='text-lg font-bold text-left pt-5 pl-5 mb-10'
+                link='Read article'
+                LinkNavigate='/ReadPage'
+                LinkClassname='bg-black text-lg text-white mr-16 px-3 py-2 rounded-full font-semibold hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
+              />
+            )}
           </div>
         </div>
       </div>

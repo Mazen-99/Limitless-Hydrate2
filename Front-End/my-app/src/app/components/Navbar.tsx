@@ -14,15 +14,15 @@ const Navbar = () => {
     <div className='fixed top-0 left-0 lg:left-[-7px] justify-center w-screen'>
       <nav className='sm:w-full lg:w-[900px] h-[50px] lg:my-5 mb-5 z-10 flex justify-between items-center bg-white mx-auto lg:rounded-lg shadow-md'>
         <div className='hidden lg:block px-8 space-x-6'>
-          <Link href='/Products' className={pathname === '/Products' ? 'text-[#306FC7] font-medium border-b-2 pb-1 border-[#306FC7]' : 'text-black hover:text-[#306FC7] font-medium'}>Products</Link>
-          <Link href='/AboutUs' className={pathname === '/AboutUs' ? 'text-[#306FC7] font-medium border-b-2 pb-1 border-[#306FC7]' : 'text-black hover:text-[#306FC7] font-medium'}>About Us</Link>
-          <Link href='/Community' className={pathname === '/Community' ? 'text-[#306FC7] font-medium border-b-2 pb-1 border-[#306FC7]' : 'text-black hover:text-[#306FC7] font-medium'}>Community</Link>
+          <Link href='/Products' className={pathname === '/Products' ? 'text-[#306FC7] font-medium border-b-2 pb-1 border-[#306FC7]' : 'text-black hover:text-[#306FC7] font-medium transation-all duration-200 ease-in'}>Products</Link>
+          <Link href='/AboutUs' className={pathname === '/AboutUs' ? 'text-[#306FC7] font-medium border-b-2 pb-1 border-[#306FC7]' : 'text-black hover:text-[#306FC7] font-medium transation-all duration-200 ease-in'}>About Us</Link>
+          <Link href='/Community' className={pathname === '/Community' ? 'text-[#306FC7] font-medium border-b-2 pb-1 border-[#306FC7]' : 'text-black hover:text-[#306FC7] font-medium transation-all duration-200 ease-in'}>Community</Link>
         </div>
         <div className='ml-[20px] lg:mr-22 '>
           <Link href='/'><img src="./logo.png" alt="Logo" className='h-8 select-none' draggable="false" /></Link>
         </div>
         <div>
-          <button className='hidden lg:block w-[130px] h-[50px] text-white font-bold py-[10px] px-[10px] rounded-lg rounded-tl-none rounded-bl-none bg-black hover:bg-[#306FC7] focus:outline-none'>
+          <button className='hidden lg:block w-[130px] h-[50px] text-white font-bold py-[10px] px-[10px] rounded-lg rounded-tl-none rounded-bl-none bg-black hover:bg-[#306FC7] hover:border-[#306FC7] transation-all duration-200 focus:outline-none ease-in'>
             Buy Now
           </button>
         </div>

@@ -48,7 +48,7 @@ const ProductsPage = () => {
                 description={product1.description}
                 descriptionClassname='text-md leading-tight text-black my-1 mb-4'
                 link='Learn More'
-                LinkClassname='bg-black text-lg text-white font-semibold py-2 px-3 rounded-full'
+                LinkClassname='bg-black text-lg text-white font-semibold py-2 px-3 rounded-full hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
                 LinkNavigate='/TheProduct'
               />
             )}
@@ -64,7 +64,7 @@ const ProductsPage = () => {
                 description={product2.description}
                 descriptionClassname='text-md leading-tight text-black my-1 mb-4'
                 link='Learn More'
-                LinkClassname='bg-black text-lg text-white font-semibold py-2 px-3 rounded-full'
+                LinkClassname='bg-black text-lg text-white font-semibold py-2 px-3 rounded-full hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
                 LinkNavigate='/TheProduct'
               />
             )}
@@ -82,7 +82,7 @@ const ProductsPage = () => {
                 description={product1.description}
                 descriptionClassname='text-md leading-tight text-black my-1 mb-4'
                 link='Learn More'
-                LinkClassname='bg-black text-lg text-white font-semibold py-2 px-3 rounded-full'
+                LinkClassname='bg-black text-lg text-white font-semibold py-2 px-3 rounded-full hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
                 LinkNavigate='/TheProduct'
               />
             )}
@@ -98,7 +98,7 @@ const ProductsPage = () => {
                 description={product2.description}
                 descriptionClassname='text-md leading-tight text-black my-1 mb-4'
                 link='Learn More'
-                LinkClassname='bg-black text-lg text-white font-semibold py-2 px-3 rounded-full'
+                LinkClassname='bg-black text-lg text-white font-semibold py-2 px-3 rounded-full hover:bg-white hover:border-2 hover:border-black  hover:text-black transation-all duration-200'
                 LinkNavigate='/TheProduct'
               />
             )}
